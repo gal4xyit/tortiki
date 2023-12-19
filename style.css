@@ -1,0 +1,257 @@
+body, html{
+    margin: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 5px;
+}
+
+.container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+}
+
+header{
+    border-radius: 2px;
+    grid-column: 1/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 10vw;
+}
+
+main{
+    border-radius: 2px;
+    grid-column: 1/3;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 27vw);
+    grid-template-rows: repeat(3, 14vw);
+}
+
+.cake{
+    background-color: #F6F7F8;
+    border: 1px black solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+
+.info{
+    /* background-color: pink; */
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.info .cakeName{
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.description{
+    /* background-color: orange; */
+    height: 25%;
+    border-top: 1px grey solid;
+    padding: 10px 0px;
+}
+
+aside{
+    background-color: #F6F7F8;
+    border: 1px black solid;
+    border-radius: 2px;
+    grid-column: 4/-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    width: 13vw;
+    height: 23vw;
+}
+
+aside nav{
+    /* background-color: blueviolet; */
+   display: grid;
+   grid-template-columns: repeat(1, 10vw);
+   grid-template-rows: repeat(3, 2.5vw);
+   gap: 10px;
+}
+
+.topnav{
+    display: none;
+}
+
+footer{
+   /* background-color: green; */
+   grid-column: 1/5;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-height: 1vw;
+}
+
+.logo{
+    height: 5vw;
+    width: 35%;
+}
+
+.image img{
+    width: 100%;
+    height: 90%;
+    max-height: 175px;
+    min-width: 14vw;
+}
+
+aside img{
+    width: 100%;
+    height: 8%;
+}
+
+#checkboxTist, #checkboxTort, #checkboxReset{
+    display: none;
+}
+
+#checkboxTist:checked ~ .tist{
+    display: none;
+}
+
+#checkboxTort:checked ~ .tort{
+    display: none;
+}
+
+.selector{
+    display: flex;
+    border-radius: 5px;
+    background-color: gray;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector label:hover{
+    cursor: pointer;
+}
+
+.cake:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.6); 
+    cursor: pointer;
+}
+
+.selector:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.6); 
+}
+
+@media (max-width: 730px) {
+
+    .container{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 3vw;
+        row-gap: 25px;
+    }
+
+    .info .cakeName{
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    aside{
+        display: none;
+    }
+    .topnav{
+        display: block;
+    }
+    .topnav nav{
+        display: grid;
+        grid-template-columns: repeat(3, 33vw);
+        grid-template-rows: 4vw;
+        gap: 2vw 11vw;
+    }
+
+    .topnav{
+        max-height: 1vw;
+    }
+
+    .cake > .description {
+        display: none;
+    }
+
+    main{
+        display: grid;
+        grid-gap: 15px;
+        grid-column: 1/-1;
+        grid-template-columns: repeat(3, 40vw);
+        grid-template-rows: repeat(3, 31vw);
+    }
+
+    .image img{
+        width: 100%;
+        height: 20vw;
+
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+    }
+
+}
+
+@media (max-width: 375px){
+
+    .container{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 3vw;
+        row-gap: 25px;
+    }
+
+    .topnav nav{
+        display: grid;
+        grid-template-columns: repeat(2, 40vw);
+        grid-template-rows: repeat(4, 3vw);
+        gap: 2vw 12vw;
+    }
+
+    main{
+        display: grid;
+        grid-gap: 15px;
+        grid-column: 1/-1;
+        grid-template-columns: repeat(2, 45vw);
+        grid-template-rows: repeat(4, 24vw);
+    }
+
+    footer{
+        grid-column: 1/-1;
+    }
+
+    .cake .info .name{
+        display: none;
+    }
+
+    .image img{
+        width: 100%;
+        height: auto;
+        max-height: 23vw;
+
+    }
+
+    .cake{
+        padding: 0px;
+    }
+}
